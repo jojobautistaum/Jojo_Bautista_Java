@@ -1,0 +1,132 @@
+openapi: 3.0.1
+info:
+  title: Month and Math Service
+  description: A simple Rest web service which will convert a "month number" into "month string" either randomly or specifying a month. The Math solutions will allow you to provide two integers and perform the four basic arithmetic operations and return the result as integer.
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /subtract:
+    post:
+      tags:
+        - math-solution-controller
+      operationId: subtractNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+  /multiply:
+    post:
+      tags:
+        - math-solution-controller
+      operationId: multiplyNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+  /divide:
+    post:
+      tags:
+        - math-solution-controller
+      operationId: divideNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+  /add:
+    post:
+      tags:
+        - math-solution-controller
+      operationId: addNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+  /randomMonth:
+    get:
+      tags:
+        - month-controller
+      operationId: getRandomMonth
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Month'
+  /month/{monthNumber}:
+    get:
+      tags:
+        - month-controller
+      operationId: getMonthNumber
+      parameters:
+        - name: monthNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Month'
+components:
+  schemas:
+    MathSolution:
+      type: object
+      properties:
+        operand1:
+          type: string
+        operand2:
+          type: string
+        operation:
+          type: string
+        answer:
+          type: integer
+          format: int32
+    Month:
+      type: object
+      properties:
+        number:
+          type: string
+        name:
+          type: string
