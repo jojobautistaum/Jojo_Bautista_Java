@@ -1,4 +1,4 @@
-bb# Month and Match Service
+# Game Store Management
 
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
