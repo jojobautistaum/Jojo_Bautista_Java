@@ -8,24 +8,24 @@ This app demonstrate the use of microservices, Eureka server and feign client
 
 ## **Game Store URL Paths**
 
-### Service-Registry (Eureka Server): http://localhost:8761
-### Catalog (Console, Game, TShirt): http://localhost:7474
+### 1. Service-Registry (Eureka Server): http://localhost:8761
+### 2. Catalog (Console, Game, TShirt): http://localhost:7474
 > **GET**
-> - /console
-> - /console/{id}
-> - /console/manufacturer/{manufacturer}   e.g. Sony, Microsoft, Nintendo
-> - /game
-> - /game/{id}
-> - /game/esrbrating/{esrb}   e.g. teens, 10+, everyone
-> - /game/title/{title}       e.g. "Super Mario", "Need For Speed Unbound"
-> - /game/studio/{studio}     e.g. "Electornic Arts", "Blizzard"
-> - /tshirt
-> - /tshirt/{id}
-> - /tshirt/size/{size}       e.g. Large, Medium, Small
-> - /tshirt/color/{color}     e.g. Blue, Red, Yellow, Green
+> - ***/console***
+> - ***/console/{id}***
+> - ***/console/manufacturer/{manufacturer}***   e.g. Sony, Microsoft, Nintendo
+> - ***/game***
+> - ***/game/{id}***
+> - ***/game/esrbrating/{esrb}***   e.g. teens, 10+, everyone
+> - ***/game/title/{title}***       e.g. "Super Mario", "Need For Speed Unbound"
+> - ***/game/studio/{studio}***     e.g. "Electornic Arts", "Blizzard"
+> - ***/tshirt***
+> - ***/tshirt/{id}***
+> - ***/tshirt/size/{size}***       e.g. Large, Medium, Small
+> - ***/tshirt/color/{color}***     e.g. Blue, Red, Yellow, Green
 
 > **POST**
-> - /console </br>
+> - ***/console*** </br>
 >     *Fields:*
 >     * model
 >     * manufacturer
@@ -34,7 +34,7 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * price
 >     * quantity
 >
-> - /game </br>
+> - ***/game*** </br>
 >     *Fields:*
 >     * title
 >     * esrbRating
@@ -43,7 +43,7 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * price
 >     * quantity
 >
-> - /tshirt <br>
+> - ***/tshirt*** <br>
 >     *Fields:*
 >     * size
 >     * color
@@ -52,7 +52,7 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * quantity
 
 > **PUT**
-> - /console </br>
+> - ***/console*** </br>
 >     *Fields:*
 >     * id
 >     * model
@@ -62,7 +62,7 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * price
 >     * quantity
 >
-> - /game </br>
+> - ***/game*** </br>
 >     *Fields:*
 >     * id
 >     * title
@@ -72,7 +72,7 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * price
 >     * quantity
 >
-> - /tshirt <br>
+> - ***/tshirt*** <br>
 >     *Fields:*
 >     * id
 >     * size
@@ -82,15 +82,15 @@ This app demonstrate the use of microservices, Eureka server and feign client
 >     * quantity
 
 > **DELETE**
-> - /console/{id}
-> - /game/{id}
-> - /tshirt/{id}
+> - ***/console/{id}***
+> - ***/game/{id}***
+> - ***/tshirt/{id}***
 
-### Invoice (with Feign client for Console, Game, TShirt): http://localhost:7475
+### 3. Invoice (with Feign client for Console, Game, TShirt): http://localhost:7475
 > **GET**
-> - /invoice
-> - /invoice/{id}
-> - /invoice/cname/{name}    where: name is a customer name
+> - ***/invoice***
+> - ***/invoice/{id}***
+> - ***/invoice/cname/{name}***    **where:** name is a customer name
 
 > **POST**
 > - invoice
